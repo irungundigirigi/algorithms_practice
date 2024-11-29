@@ -1,4 +1,9 @@
 #!/usr/bin/env python3
+"""
+Returns integers that are unique(have a frequency of 1) in a matrix.
+Parameters: m -matrix of ints
+Returns: unique elements
+"""
 
 def get_unique(m):
     unique_elements = {}
@@ -15,5 +20,3 @@ def get_unique(m):
 
 m = [[1, 4, 8, 12], [2, 4, 6, 8]]
 get_unique(m)
-
-    
