@@ -25,19 +25,33 @@ def get_largest_plus(m):
     """ populate the matrixes"""
     for i in range(size):
         for j in range(1,size):
+            """left """
             if m[i][j] == 1:
                 left[i][j] = left[i][j - 1] + 1
-
+            
+            """ right matrix """
             if m[i][size - j] == 1:
                 right[i][size - j -1] = right[i][size - j] + 1
 
+            """ top matrix """
+            if m[j][i] == 1:
+                top[j][i] = top[j - 1][i] + 1
 
-    print('left')
-    for i in left:
-        print(i)
+            """ bottom """
+            if m[size -j -1][i] == 1:
+                bottom[size - j -1][i] = bottom[size - j][i] + 1
 
-    print('right')
-    for i in right:
+
+    # print('left')
+    # for i in left:
+    #     print(i)
+
+    # print('right')
+    # for i in right:
+    #     print(i)
+
+    print('bottom')
+    for i in bottom:
         print(i)
 
 
