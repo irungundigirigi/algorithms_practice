@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 
 """
-Given a matrix of binary values, returns the size of the largest + sign 
+Given a matrix of binary values, returns the arm-size of the largest + sign 
 created by consecutive 1's.
 Parameter: Binary matrix ()
 """
@@ -40,21 +40,14 @@ def get_largest_plus(m):
             """ bottom """
             if m[size -j -1][i] == 1:
                 bottom[size - j -1][i] = bottom[size - j][i] + 1
-
-
-    # print('left')
-    # for i in left:
-    #     print(i)
-
-    # print('right')
-    # for i in right:
-    #     print(i)
-
-    print('bottom')
-    for i in bottom:
-        print(i)
-
-
+    """ calculate the longest arm based min size on all sides"""
+    longest_arm = 0
+    for i in range(size):
+        for j in range(size):
+            arm = min(min(left[i][j], right[i][j]), min(top[i][j], bottom[i][j]))
+            if arm > longest_arm:
+                longest_arm = arm
+    return longest_arm
 if __name__=="__main__":
      
     # Binary Matrix of size N
